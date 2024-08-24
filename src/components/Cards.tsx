@@ -5,11 +5,14 @@ import Image from 'next/image'
 
 export default function Cards() {
   return (
+    <>
     <section>
       {/* <div>
         <Image src="" alt="This is test demo" />
-      </div> */}
+        </div> */}
       <Button>Click here</Button>
     </section>
+        
+        </>
   )
 }
