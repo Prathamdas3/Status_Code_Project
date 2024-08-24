@@ -44,7 +44,7 @@ export default function Hero() {
         </p>
         <div className="flex justify-center">
           <Button
-            className="w-[26rem] h-[6rem] rounded-[3rem] bg-[#34C1EE] text-[1.9rem] font-bold text-black "
+            className="w-[26rem] h-[6rem] rounded-[3rem] bg-[#34C1EE] text-[1.9rem] font-bold text-black  hover:border-[#34C1EE]"
             variant="outline"
           >
             Get Started

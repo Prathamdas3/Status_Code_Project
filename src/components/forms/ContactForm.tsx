@@ -107,7 +107,7 @@ export default function ContactForm() {
           <Button
             type="submit"
             disabled={form.formState.isSubmitting}
-            className="hover:border-[#fc5d35] hover:text-[#fc5d35] px-3 py-7 text-center w-36 border-[1px]  border-transparent text-[#f7f7f7] hover:bg-transparent outline-none bg-[#fc5d35] font-semibold text-xl  rounded-xl"
+            className="hover:border-[#a3e0f3] hover:text-[#a3e0f3] px-3 py-7 text-center w-36 border-[1px]  border-transparent text-black hover:bg-transparent outline-none bg-[#a3e0f3] font-semibold text-xl  rounded-xl"
           >
             Submit
           </Button>
