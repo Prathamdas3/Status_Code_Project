@@ -6,6 +6,7 @@ import { Popover, PopoverTrigger, PopoverContent } from '../ui/popover'
 import { CalendarIcon } from '@radix-ui/react-icons'
 import { format } from 'date-fns'
 import { toast } from 'sonner'
+import { useRouter } from 'next/navigation'
 import {
   Form,
   FormControl,
@@ -28,8 +29,12 @@ import {
   SelectTrigger,
   SelectValue,
 } from '@/components/ui/select'
+import { useState } from 'react'
+import { useEdgeStore } from '@/lib/edgestore'
 
 export default function AnimalForm() {
+  const router = useRouter()
+
   const form = useForm({
     resolver: zodResolver(AnimalFormSchema),
     defaultValues: {
@@ -47,7 +52,8 @@ export default function AnimalForm() {
 
   const onSubmit = async (formData: AnimalFormSchemaType) => {
     try {
-      await createAnimal(formData)
+      const res = await createAnimal(formData)
+      router.push(`/upload_doc_img/${res.id}`)
       toast.success('Data has been to sent to the backend successfully')
       form.reset()
     } catch (error: unknown) {
