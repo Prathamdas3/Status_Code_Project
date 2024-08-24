@@ -1,3 +1,9 @@
+import cardPage from "@/components/cardPage"
+
 export default async function Home() {
-  return <main>Hi this is Home</main>
+  return <>
+  <main>
+    Hi this is Home
+    </main>
+  </>
 }
