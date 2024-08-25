@@ -11,10 +11,10 @@ const TigerInfo: React.FC = () => {
             White tigers are rare Bengal tiger variants with striking white fur and blue eyes, found mainly in captivity. Conservation efforts are essential to protect these majestic creatures from extinction.
           </p>
           <div className="flex gap-5 justify-between mt-16 max-w-full text-base text-center w-[369px] max-md:mt-10">
-            <button className="px-9 py-4 whitespace-nowrap rounded-3xl bg-zinc-300 bg-opacity-60 max-md:px-5">
+            <button className="px-9 py-4 whitespace-nowrap rounded-3xl bg-zinc-300 bg-opacity-60 max-md:px-5 hover:cursor-pointer hover:bg-zinc-400">
               EXPLORE
             </button>
-            <button className="px-6 py-4 rounded-3xl bg-zinc-300 bg-opacity-60 max-md:px-5">
+            <button className="px-6 py-4 rounded-3xl bg-zinc-300 bg-opacity-60 max-md:px-5 hover:cursor-pointer hover:bg-zinc-400">
               KNOW MORE
             </button>
           </div>

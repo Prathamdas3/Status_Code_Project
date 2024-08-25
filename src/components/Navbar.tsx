@@ -14,7 +14,7 @@ import DataButton from '@/components/form'
 
 export default async function Navbar() {
   return (
-    <section className="bg-white flex justify-between items-center">
+    <section className="bg-white flex justify-between items-center container">
       <div className="py-6 px-12">Name</div>
       <div className="flex py-6 px-12">
         <div className="flex m-auto ">

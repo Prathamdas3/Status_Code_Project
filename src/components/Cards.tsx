@@ -101,3 +101,10 @@ export default function Cards({ data }: { data: Animal }) {
     </article>
   )
 }
+
+
+export function flexCard(){
+  return(
+    <>abc</>
+  )
+}

@@ -8,14 +8,16 @@ import { getAnimals } from '@/server/action'
 
 export default async function Home() {
   return (
-    <main className="container">
+    <main className="">
       <Navbar />
       <Hero />
+      <section className='container my-4'>
       <NFTGallery />
 
       {/* <FormExp/> */}
 
       <Details />
+      </section>
       <Footer />
     </main>
   )

@@ -19,7 +19,95 @@
 // }
 
 // export default cardPage
-
+import {PawPrint} from "lucide-react";
+import Image from "next/image"
+import Navbar from "@/components/Navbar"
+import {
+    Dialog,
+    DialogContent,
+    DialogDescription,
+    DialogHeader,
+    DialogTitle,
+    DialogTrigger,
+  } from "@/components/ui/dialog"
+  
+  
+import {
+    Popover,
+    PopoverContent,
+    PopoverTrigger,
+  } from "@/components/ui/popover"
+import { Smile } from "lucide-react"
+  
+const arr=[
+    "/one.png",
+]
+let e="HAPPY"
+async function mood() {
+  if(e=="HAPPY"){
+    return <Image src={"/smile.png"} height={30} width={30} alt="emoji" />;
+  }
+  
+  else if(e=="SAD"){
+    return <Image src={"/slightly_frowning_face.png"} height={30} width={30} alt="emoji" />;
+  }
+  
+  else if(e=="DEPRESSED"){
+    return <Image src={"/pensive.png"} height={30} width={30} alt="emoji" />;
+  }
+  
+  else if(e=="NEEDLOVE"){
+    return <Image src={"/pleading-face.1024x986.png"} height={30} width={30} alt="emoji" />;
+  }
+  
+}
 export default async function ShowCards() {
-  return <>herror</>
+    return(
+        <section>
+            <Navbar/>
+            <div className="flex items-center justify-center pt-10 px-10">
+                <p className="text-5xl font-bold">Cards</p>
+            </div>
+            <div className="flex justify-center">
+            
+    {arr.map((e,index)=>(
+                    <div key={index} className="flip-card">
+    <div className="flip-card-inner">
+        <div className="flip-card-front">
+            <p className="title"></p>
+            <img className="w-[18.75rem] h-[18.75rem] self-center rounded-xl" src={e} alt="" />
+            <p className="text-2xl font-bold pt-4">Messi</p>
+            <p className="text-1xl">The G.O.A.T</p>
+            <div className="flex justify-center gap-3 pt-2 ">
+
+
+
+
+  <div className="emojis">
+    {mood()}
+
+  </div>
+            </div>
+        </div>
+        <div className="flip-card-back text-[1.3rem] flex flex-col">
+          <PawPrint className="flex self-center py-2 h-14"/>
+            <p className="py-2"><b className="text-gray-600">Name: </b>MS Dhoni</p>
+            <p className="py-2"><b className="text-gray-600">Height: </b>6ft 3inch</p>
+            <p className="py-2"><b className="text-gray-600">Weight: </b>90kg</p>
+            <p className="py-2"><b className="text-gray-600">Height: </b>6ft 3inch</p>
+            <p className="py-2"><b className="text-gray-600">Height: </b>6ft 3inch</p>
+            <p className="py-2"><b className="text-gray-600">Height: </b>6ft 3inch</p>
+        </div>
+    </div>
+</div>
+                ))}   
+            </div>
+            <div className="flex justify-center">
+            <button className="shadow__btn">
+    Donate
+</button>
+            </div>
+        </section>
+    )
+
 }
