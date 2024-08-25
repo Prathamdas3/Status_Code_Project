@@ -20,4 +20,6 @@
 
 // export default cardPage
 
-export default async function ShowCards() {}
+export default async function ShowCards() {
+  return <>herror</>
+}

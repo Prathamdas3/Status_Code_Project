@@ -1,13 +1,14 @@
 'use client'
 
-import * as React from 'react'
 import { useEdgeStore } from '@/lib/edgestore'
 import { Button } from '@/components/ui/button'
 import { useRouter } from 'next/navigation'
-import { uploadImage } from '@/server/action'
+import { getAnimal, uploadImage } from '@/server/action'
+import initialize from '@/components/form'
+import { useState } from 'react'
 
 export default function Page({ params }: { params: { id: string } }) {
-  const [file, setFile] = React.useState<File>()
+  const [file, setFile] = useState<File>()
   const { edgestore } = useEdgeStore()
   const { id } = params
   const router = useRouter()
@@ -33,6 +34,9 @@ export default function Page({ params }: { params: { id: string } }) {
             })
             // you can run some server action or api here
             // to add the necessary data to your database
+            const data = await getAnimal(id)
+            if (!data?.name) return { message: 'name is undefined' }
+            initialize({ animalName: data?.name, imageUrl: res.url })
             await uploadImage(res.url, id)
             router.push('/')
           }

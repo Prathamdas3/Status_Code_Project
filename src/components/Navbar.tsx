@@ -10,6 +10,7 @@ import {
   DialogTitle,
   DialogTrigger,
 } from '@/components/ui/dialog'
+import DataButton from '@/components/form'
 
 export default async function Navbar() {
   return (
@@ -37,8 +38,10 @@ export default async function Navbar() {
           </Dialog>
 
           <div className="flex items-center gap-6">
-            {' '}
-            <Cart className="" />
+            {/* {' '}
+            <Cart className="" /> */}
+            <DataButton />
+
             <SignedIn>
               <UserButton />
             </SignedIn>

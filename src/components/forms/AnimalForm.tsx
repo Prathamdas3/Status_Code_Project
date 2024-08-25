@@ -29,8 +29,6 @@ import {
   SelectTrigger,
   SelectValue,
 } from '@/components/ui/select'
-import { useState } from 'react'
-import { useEdgeStore } from '@/lib/edgestore'
 
 export default function AnimalForm() {
   const router = useRouter()
@@ -53,6 +51,7 @@ export default function AnimalForm() {
   const onSubmit = async (formData: AnimalFormSchemaType) => {
     try {
       const res = await createAnimal(formData)
+
       router.push(`/upload_doc_img/${res.id}`)
       toast.success('Data has been to sent to the backend successfully')
       form.reset()
