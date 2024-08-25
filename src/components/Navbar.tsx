@@ -1,7 +1,5 @@
-import { SignInButton, UserButton } from '@clerk/nextjs'
-import Image from 'next/image'
+import { SignUpButton, UserButton, SignedIn, SignedOut } from '@clerk/nextjs'
 import { Cart } from './icons/cartIcon'
-import { User } from './icons/userIcon'
 import { Searchbar } from './icons/searchIcon'
 
 import {
@@ -38,11 +36,16 @@ export default async function Navbar() {
             </DialogContent>
           </Dialog>
 
-          <Cart className="" />
-        </div>
-        <div className="flex">
-          <UserButton />
-          <SignInButton />
+          <div className="flex items-center gap-6">
+            {' '}
+            <Cart className="" />
+            <SignedIn>
+              <UserButton />
+            </SignedIn>
+            <SignedOut>
+              <SignUpButton />
+            </SignedOut>
+          </div>
         </div>
       </div>
     </section>
