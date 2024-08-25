@@ -52,10 +52,13 @@ export default function Cards() {
   };
 
   return (
+    <>
     <section>
+
       <Button onClick={handleClick} disabled={isLoading}>
         {isLoading ? 'Processing...' : 'Buy Now'}
       </Button>
     </section>
   );
+
 }

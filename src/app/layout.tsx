@@ -2,7 +2,10 @@ import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import './globals.css'
 import { ClerkProvider } from '@clerk/nextjs'
-import { ThemeProvider } from '@/lib/providers/theme'
+import { ThemeProvider } from '@/components/providers/theme'
+import { Toaster } from '@/components/ui/sonner'
+
+import { EdgeStoreProvider } from '../lib/edgestore'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -22,11 +25,13 @@ export default function RootLayout({
         <body className={inter.className}>
           <ThemeProvider
             attribute="class"
-            defaultTheme="system"
+            defaultTheme="white"
             enableSystem
             disableTransitionOnChange
           >
-            {children}
+            <EdgeStoreProvider>{children}</EdgeStoreProvider>
+
+            <Toaster />
           </ThemeProvider>
         </body>
       </html>

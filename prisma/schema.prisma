@@ -1,9 +1,3 @@
-// This is your Prisma schema file,
-// learn more about it in the docs: https://pris.ly/d/prisma-schema
-
-// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
-// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
-
 generator client {
   provider = "prisma-client-js"
 }
@@ -11,4 +5,47 @@ generator client {
 datasource db {
   provider = "postgresql"
   url      = env("DATABASE_URL")
+}
+
+enum Status {
+  HAPPY
+  SAD
+  DEPRESSED
+  NEEDLOVE
+}
+
+model Animal {
+  id                String   @id @default(cuid())
+  image             String
+  nftImage          String?  @default("")
+  name              String
+  weight            Float
+  height            Float
+  age               Int
+  DOB               DateTime
+  Location          String
+  lastHealthCheckOn DateTime @default(now())
+  Diseases          String
+  status            Status   @default(HAPPY)
+  createdAt         DateTime @default(now())
+  updatedAt         DateTime @updatedAt
+}
+
+model card {
+  id                String   @id @default(cuid())
+  image             String
+  nftImage          String?  @default("")
+  name              String
+  weight            Float
+  height            Float
+  age               Int
+  DOB               DateTime
+  Location          String
+  userId            String
+  price             String
+  lastHealthCheckOn DateTime @default(now())
+  Diseases          String
+  status            Status   @default(HAPPY)
+  createdAt         DateTime @default(now())
+  updatedAt         DateTime @updatedAt
 }
