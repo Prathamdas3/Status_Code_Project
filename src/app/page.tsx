@@ -1,12 +1,10 @@
-import Cards from '@/components/Cards'
 import Navbar from '@/components/Navbar'
-
 import FormExp from '@/components/form'
-
 import Hero from '@/components/Hero'
 import Details from '@/components/Details'
 import Footer from '@/components/Footer'
 import NFTGallery from '@/components/NFTGallery'
+import { getAnimals } from '@/server/action'
 
 export default async function Home() {
   return (
@@ -15,14 +13,12 @@ export default async function Home() {
       <Hero />
       <section className='container my-4'>
       <NFTGallery />
-      <Cards />
 
-      <FormExp/>
+      {/* <FormExp/> */}
 
       <Details />
       </section>
       <Footer />
-
     </main>
   )
 }

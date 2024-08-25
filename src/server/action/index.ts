@@ -2,8 +2,13 @@
 import { AnimalFormSchema, AnimalFormSchemaType } from '@/lib/schema'
 import { Status } from '@prisma/client'
 import prisma from '../db'
-
+import { auth } from '@clerk/nextjs/server'
 import { revalidatePath } from 'next/cache'
+
+type updatedAnimalSchema = AnimalFormSchemaType & {
+  id: string
+  image: string
+}
 
 export async function getAnimals() {
   try {
@@ -16,6 +21,10 @@ export async function getAnimals() {
 }
 export async function getAnimal(id: string) {
   try {
+    const data = await prisma.animal.findUnique({
+      where: { id: id },
+    })
+    return data
   } catch (error) {
     console.log('error in getting the animal', error)
   }
@@ -46,5 +55,38 @@ export async function uploadImage(img: string, id: string) {
     return res
   } catch (error) {
     console.log('error in updating', error)
+  }
+}
+
+export async function getAnimalCard() {
+  try {
+    const { userId } = auth()
+    if (!userId) return { message: 'UserId is null' }
+
+    const data = await prisma.card.findMany({ where: { userId: userId } })
+    return data
+  } catch (error: unknown) {
+    console.log('error in getting the showcase card ', error)
+  }
+}
+
+export async function createAnimalCard(formData: updatedAnimalSchema) {
+  try {
+    const { userId } = auth()
+    if (!userId) return { message: 'UserId is null' }
+
+    const data = await prisma.card.findMany({ where: { userId: userId } })
+
+    await prisma.card.create({
+      data: {
+        userId: userId,
+        price: 0.01,
+        animalId: formData.id,
+        status: formData.status as Status,
+        ...formData,
+      },
+    })
+  } catch (error: unknown) {
+    console.error(error)
   }
 }

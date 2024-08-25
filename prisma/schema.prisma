@@ -18,6 +18,7 @@ model Animal {
   id                String   @id @default(cuid())
   image             String
   nftImage          String?  @default("")
+  contractAddress   String?
   name              String
   weight            Float
   height            Float
@@ -33,6 +34,8 @@ model Animal {
 
 model card {
   id                String   @id @default(cuid())
+  animalId          String
+  contractAddress   String?
   image             String
   nftImage          String?  @default("")
   name              String
@@ -42,7 +45,7 @@ model card {
   DOB               DateTime
   Location          String
   userId            String
-  price             String
+  price             Float
   lastHealthCheckOn DateTime @default(now())
   Diseases          String
   status            Status   @default(HAPPY)

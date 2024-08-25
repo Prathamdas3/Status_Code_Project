@@ -81,6 +81,8 @@ export default async function ShowCards() {
             <div className="flex justify-center gap-3 pt-2 ">
 
 
+
+
   <div className="emojis">
     {mood()}
 
@@ -107,4 +109,5 @@ export default async function ShowCards() {
             </div>
         </section>
     )
+
 }
