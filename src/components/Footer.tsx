@@ -7,14 +7,14 @@ export default async function Footer() {
         <div className="flex flex-wrap gap-5 justify-between text-3xl text-white max-md:max-w-full">
           <div className="flex flex-col my-6">
             <h2 className="self-start font-bold text-center text-4xl">ABOUT</h2>
-            <p className="mt-9 font-normal text-md ">
+            <p className="mt-4 mb-4 font-normal text-[1.5rem] ">
               Help The Boucher Legacy come together to protect what's ours.
               Together we can stop poaching and save the rhino from extinction.
               Place our rhino in safe hands.
             </p>
           </div>
         </div>
-        <h2 className="self-start font-bold text-center text-white text-4xl">
+        <h2 className="self-start font-bold text-center text-white text-3xl">
           CONTACT US
         </h2>
         <ContactForm />

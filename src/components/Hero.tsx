@@ -4,40 +4,11 @@ import { useRouter } from 'next/navigation'
 import { getAuth } from '@clerk/nextjs/server'
 import Image from 'next/image'
 
-const arr = [
-  '/download.jpeg',
-  '/download.jpeg',
-  '/download.jpeg',
-  '/download.jpeg',
-  '/download.jpeg',
-  '/download.jpeg',
-  '/download.jpeg',
-  '/download.jpeg',
-  '/download.jpeg',
-  '/download.jpeg',
-  '/download.jpeg',
-  '/download.jpeg',
-  '/download.jpeg',
-]
-
 export default function Hero() {
   const router = useRouter()
   // const user = getAuth()
   return (
-    <section className="bg-white py-[80px]">
-      <section className="flex overflow-x-scroll space-x-5 p-5 scrollbar-hide">
-        {arr.map((e: string, index: number) => (
-          <Image
-            key={index}
-            className="h-56 w-64 rounded-[2.4rem] flex-shrink-0"
-            src={e}
-            alt={`Image ${index + 1}`}
-            width={200}
-            height={200}
-          />
-        ))}
-      </section>
-
+    <section className="pt-[50px] pb-[80px] heroBack min-h-[92vh] flex flex-row justify-center items-center bg-sky-200 pb-4">
       <div className="flex flex-col justify-center center">
         <p className="text-black  font-bold text-[1.5rem] text-center py-[5rem] px-[15rem]">
           Our country continues to struggle daily against rhino poaching as well
@@ -55,6 +26,7 @@ export default function Hero() {
           </Button>
         </div>
       </div>
+      <div className='mr-32'><Image src="/background.jpg" height={1700} width={1700} alt='bg' className=' rounded-xl' /></div>
     </section>
   )
 }

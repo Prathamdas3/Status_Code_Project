@@ -15,11 +15,11 @@ const MoreBuddies: React.FC = () => {
   return (
     <section className="mt-96 ml-5 w-full  max-md:mt-10 max-md:max-w-full">
       <div className="flex flex-wrap gap-5 justify-between">
-        <h2 className="text-6xl text-white max-md:text-4xl">More buddies</h2>
+        <h2 className="text-4xl text-white max-md:text-4xl font-bold">More buddies</h2>
         <div className="flex gap-10 self-start items-center">
           <div className="self-start  text-3xl font-bold text-white">Discover more</div>
           <div className="flex overflow-hidden flex-col items-center">
-            <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/86c8fd78e89c1d36bc5907c36636c542030188b92df74d420a89bd293d046bc5?placeholderIfAbsent=true&apiKey=29eeabe0f372480f9776892916907639" alt="" className="object-contain w-10 aspect-square" />
+            <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/86c8fd78e89c1d36bc5907c36636c542030188b92df74d420a89bd293d046bc5?placeholderIfAbsent=true&apiKey=29eeabe0f372480f9776892916907639" alt="" className="object-contain w-10 aspect-square hover:cursor-pointer" />
           </div>
         </div>
       </div>
