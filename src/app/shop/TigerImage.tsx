@@ -10,7 +10,7 @@ const TigerImage: React.FC = () => {
           alt="White tiger" 
           className="object-contain self-end max-w-full aspect-square rounded-[49px] w-[28rem]" 
         />
-        <div className="flex flex-col items-start py-8 pr-10 pl-8 max-w-full bg-neutral-700 rounded-[29px] w-[22rem] max-md:px-5 absolute mt-[22rem] ml-[3rem]">
+        <div className="flex flex-col items-start py-8 pr-10 pl-8 max-w-full bg-neutral-700 rounded-[29px] w-[22rem] max-md:px-5 absolute mt-[22rem] ml-[3rem] hover:cursor-pointer hover:bg-neutral-800">
           <div className="flex gap-24 text-3xl text-white text-opacity-50">
             <div className="flex shrink-0 bg-yellow-400 h-[42px] w-[57px]" />
             <div className="self-start mt-2 basis-auto font-sans">50 ETH</div>

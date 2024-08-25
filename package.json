@@ -30,6 +30,7 @@
     "axios": "^1.7.5",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.1",
+    "color-thief-react": "^2.1.0",
     "date-fns": "^3.6.0",
     "framer-motion": "^11.3.30",
     "lucide-react": "^0.435.0",

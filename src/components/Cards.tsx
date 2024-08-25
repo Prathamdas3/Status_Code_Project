@@ -16,3 +16,10 @@ export default function Cards() {
         </>
   )
 }
+
+
+export function flexCard(){
+  return(
+    <>abc</>
+  )
+}
