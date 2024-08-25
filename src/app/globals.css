@@ -2,6 +2,8 @@
 @tailwind components;
 @tailwind utilities;
 
+
+
 @layer base {
   :root {
     --background: 0 0% 100%;
@@ -59,6 +61,101 @@
   }
 }
 
+/* From Uiverse.io by joe-watson-sbf */ 
+.flip-card {
+  background-color: transparent;
+  width: 21.5rem;
+  height: 31.5rem;
+  perspective: 1000px;
+  font-family: sans-serif;
+  margin: 3rem;
+}
+
+.title {
+  font-size: 1.5em;
+  font-weight: 900;
+  text-align: center;
+  margin: 0;
+}
+
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+}
+
+.flip-card:hover .flip-card-inner {
+  transform: rotateY(180deg);
+  cursor: pointer;
+}
+
+.flip-card-front, .flip-card-back {
+  box-shadow: 0 8px 14px 0 rgba(0,0,0,0.2);
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  border: 1px solid coral;
+  border-radius: 1rem;
+}
+
+.flip-card-front {
+  background: linear-gradient(120deg, rgb(196, 246, 255) 60%, rgb(222, 247, 255) 88%,
+     rgb(195, 249, 255) 40%, rgba(80, 238, 255, 0.603) 48%);
+  color: rgb(0, 0, 0);
+}
+
+.flip-card-back {
+  background: linear-gradient(120deg, rgb(145, 250, 255) 60%, rgb(80, 223, 255) 88%,
+     rgb(196, 247, 255) 30%, rgb(160, 239, 255) 68%);
+  color: rgb(0, 0, 0);
+  transform: rotateY(180deg);
+}
+/* From Uiverse.io by mrhyddenn */ 
+.shadow__btn {
+  padding: 10px 20px;
+  border: none;
+  font-size: 17px;
+  color: #fff;
+  border-radius: 7px;
+  letter-spacing: 4px;
+  font-weight: 700;
+  text-transform: uppercase;
+  transition: 0.5s;
+  transition-property: box-shadow;
+}
+
+.shadow__btn {
+  background: rgb(0,140,255);
+  box-shadow: 0 0 25px rgb(0,140,255);
+}
+
+.shadow__btn:hover {
+  box-shadow: 0 0 5px rgb(0,140,255),
+              0 0 25px rgb(0,140,255),
+              0 0 50px rgb(0,140,255),
+              0 0 100px rgb(0,140,255);
+}
+/* From Uiverse.io by devkatyall */ 
+.card {
+  width: 354px;
+  background: rgba(41, 41, 41, 0.07);
+  white-space: nowrap;
+  overflow: hidden;
+  border-radius: 50px;
+  -webkit-box-shadow: -10px 0px 13px -7px #0000003a,
+    10px 0px 13px -7px #0000003a, 5px 5px 15px 5px rgba(0, 0, 0, 0);
+  box-shadow: -10px 0px 33px -7px #0000003a, 10px 0px 33px -7px #0000003a,
+    5px 5px 35px 5px rgba(0, 0, 0, 0);
+}
+
 @layer base {
   * {
     @apply border-border;
@@ -66,4 +163,16 @@
   body {
     @apply bg-background text-foreground;
   }
+}
+@layer utilities {
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+  .scrollbar-hide {
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+  }
+}
+.heroBack{
+  min-height: calc(100vh-80px);
 }
