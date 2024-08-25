@@ -17,12 +17,32 @@ enum Status {
 model Animal {
   id                String   @id @default(cuid())
   image             String
+  nftImage          String?  @default("")
   name              String
   weight            Float
   height            Float
   age               Int
   DOB               DateTime
   Location          String
+  lastHealthCheckOn DateTime @default(now())
+  Diseases          String
+  status            Status   @default(HAPPY)
+  createdAt         DateTime @default(now())
+  updatedAt         DateTime @updatedAt
+}
+
+model card {
+  id                String   @id @default(cuid())
+  image             String
+  nftImage          String?  @default("")
+  name              String
+  weight            Float
+  height            Float
+  age               Int
+  DOB               DateTime
+  Location          String
+  userId            String
+  price             String
   lastHealthCheckOn DateTime @default(now())
   Diseases          String
   status            Status   @default(HAPPY)

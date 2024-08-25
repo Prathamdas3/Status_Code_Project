@@ -1,6 +1,7 @@
 'use client'
 import { Button } from '@/components/ui/button'
-
+import { useRouter } from 'next/navigation'
+import { getAuth } from '@clerk/nextjs/server'
 import Image from 'next/image'
 
 const arr = [
@@ -20,6 +21,8 @@ const arr = [
 ]
 
 export default function Hero() {
+  const router = useRouter()
+  // const user = getAuth()
   return (
     <section className="bg-white py-[80px]">
       <section className="flex overflow-x-scroll space-x-5 p-5 scrollbar-hide">
@@ -46,8 +49,9 @@ export default function Hero() {
           <Button
             className="w-[26rem] h-[6rem] rounded-[3rem] bg-[#34C1EE] text-[1.9rem] font-bold text-black  hover:border-[#34C1EE]"
             variant="outline"
+            onClick={() => router.push('/sanctuary/animal')}
           >
-            Get Started
+            Register your Animal
           </Button>
         </div>
       </div>
