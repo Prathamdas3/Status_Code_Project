@@ -11,14 +11,13 @@ export default async function Home() {
     <main className="">
       <Navbar />
       <Hero />
-      <section className='container my-4'>
-      <NFTGallery />
-
-      {/* <FormExp/> */}
-
-      <Details />
+      <section className="container my-4">
+        <NFTGallery />
+        <Details />
       </section>
-      <Footer />
+      <section className="flex justify-center bg-black">
+        <Footer />
+      </section>
     </main>
   )
 }
