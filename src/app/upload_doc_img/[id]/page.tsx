@@ -36,7 +36,7 @@ export default function Page({ params }: { params: { id: string } }) {
             // to add the necessary data to your database
             const data = await getAnimal(id)
             if (!data?.name) return { message: 'name is undefined' }
-            initialize({ animalName: data?.name, imageUrl: res.url })
+
             await uploadImage(res.url, id)
             router.push('/')
           }
